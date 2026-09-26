@@ -363,12 +363,13 @@ function buildBoard() {
 function layout() {
   const W = board.clientWidth, H = board.clientHeight;
   const gap = Math.max(4, Math.min(12, Math.round(W * 0.012)));
-  const w = Math.floor(Math.min((W - 6 * gap) / 7, H / 8, 110));
+  const w = Math.floor(Math.min((W - 6 * gap) / 7, H / 8, 96));   // PC でも札が大きくなりすぎないよう 96px まで
   const h = Math.round(w * 1.4);
   const x0 = Math.round((W - (7 * w + 6 * gap)) / 2);
   geo = { W, H, gap, w, h, x0, tabTop: h + Math.max(10, gap * 2), down: Math.round(w * 0.2), up: Math.round(w * 0.6) };
   board.style.setProperty('--cw', `${w}px`);
   board.style.setProperty('--ch', `${h}px`);
+  document.documentElement.style.setProperty('--grid', `${7 * w + 6 * gap}px`);   // 上の帯・下のボタンを札の並びの幅にそろえる（PC）
   const slotPos = { s: 0, w: 1, f0: 3, f1: 4, f2: 5, f3: 6 };
   for (const [id, el] of Object.entries(slotEls)) {
     const col = id[0] === 't' ? Number(id[1]) : slotPos[id];

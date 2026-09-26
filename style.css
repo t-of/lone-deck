@@ -142,6 +142,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .glow .face { animation: glow 0.9s ease-out forwards; }
 @keyframes glow { 40% { box-shadow: 0 0 0 3px var(--gold), 0 0 22px var(--gold); } 100% { box-shadow: 0 0 0 2px var(--gold); } }
 
+/* PC: 上の帯・下のボタンを札の並びと同じ幅にして中央へ（スマホ幅は画面いっぱいのまま） */
+@media (min-width: 600px) {
+  .bar, .dock { width: max(var(--grid, 100%), 480px); max-width: 100%; align-self: center; }
+}
+
 /* ---- 下の帯（親指の所） ---- */
 .dock { display: flex; gap: 8px; }
 .btn {
