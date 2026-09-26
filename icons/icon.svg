@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#202c52"/>
+    <stop offset="1" stop-color="#0f1428"/>
+  </linearGradient>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+<g transform="translate(300,233) rotate(9)">
+  <rect x="-86.0" y="-122.0" width="172" height="244" rx="20" fill="#26305c" stroke="#3f4f8c" stroke-width="4"/>
+  <rect x="-72.0" y="-108.0" width="144" height="216" rx="12" fill="none" stroke="#3f4f8c" stroke-width="2.5" opacity="0.8"/>
+  <circle cx="-58.5" cy="-92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-29.2" cy="-92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="0.0" cy="-92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="29.2" cy="-92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="58.5" cy="-92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-43.9" cy="-61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-14.6" cy="-61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="14.6" cy="-61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="43.9" cy="-61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-58.5" cy="-30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-29.2" cy="-30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="0.0" cy="-30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="29.2" cy="-30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="58.5" cy="-30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-43.9" cy="0.0" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-14.6" cy="0.0" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="14.6" cy="0.0" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="43.9" cy="0.0" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-58.5" cy="30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-29.2" cy="30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="0.0" cy="30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="29.2" cy="30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="58.5" cy="30.9" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-43.9" cy="61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-14.6" cy="61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="14.6" cy="61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="43.9" cy="61.8" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-58.5" cy="92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="-29.2" cy="92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="0.0" cy="92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="29.2" cy="92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+<circle cx="58.5" cy="92.7" r="3.6" fill="#8fa3e8" opacity="0.55"/>
+</g>
+<g transform="translate(220,270) rotate(-7)">
+  <clipPath id="frontClip"><rect x="-94.0" y="-134.0" width="188" height="268" rx="21"/></clipPath>
+  <rect x="-96.0" y="-136.0" width="192" height="272" rx="22" fill="#f7f4ec" stroke="#c9c3b2" stroke-width="3"/>
+  <g clip-path="url(#frontClip)">
+    <text x="-74.0" y="-70.0" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="58" fill="#161a2c">A</text>
+    <g transform="translate(-66.0,-44.0) scale(0.26)"><path d="M0,-70 C 42,-24 66,7 66,36 C 66,62 46,80 21,80 C 9,80 0,72 0,60 C 0,72 -9,80 -21,80 C -46,80 -66,62 -66,36 C -66,7 -42,-24 0,-70 Z M -11,80 L 11,80 L 20,106 C 20,114 11,118 0,118 C -11,118 -20,114 -20,106 Z" fill="#161a2c"/></g>
+    <g transform="translate(6,24) scale(0.88)"><path d="M0,-70 C 42,-24 66,7 66,36 C 66,62 46,80 21,80 C 9,80 0,72 0,60 C 0,72 -9,80 -21,80 C -46,80 -66,62 -66,36 C -66,7 -42,-24 0,-70 Z M -11,80 L 11,80 L 20,106 C 20,114 11,118 0,118 C -11,118 -20,114 -20,106 Z" fill="#161a2c"/></g>
+  </g>
+</g>
+</svg>
