@@ -7,7 +7,7 @@
 // PREFIX は念のため残す。古いキャッシュを消すときは、必ず自分の PREFIX で始まるものだけを消す。
 
 const PREFIX = 'lone-deck-';
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE = `${PREFIX}${VERSION}`;
 const FONT_CACHE = `${PREFIX}fonts`;
 

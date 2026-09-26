@@ -612,6 +612,7 @@ function showHowto() {
 
 function applyLang() {
   document.documentElement.lang = lang;
+  document.title = t('title');
   WebAppKit.init({ lang, title: 'LONE DECK', text: t('share.app'), url: URL_APP });
   document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = t(el.dataset.t); });
   document.querySelectorAll('[data-t-label]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.tLabel)));

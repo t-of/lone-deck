@@ -1,6 +1,7 @@
 // 画面の文字。キーで引く（仕様 13「言葉」の一覧 + 画面を作るときに足したもの）。{n} などは t() で差しこむ。
 
 export const STRINGS = {
+  title: ['LONE DECK — ソリティア：クロンダイクで必ず解ける', 'LONE DECK — Solitaire (Klondike) You Can Always Win'],
   tagline: ['必ず解けるひとりトランプ', 'Solitaire you can always win'],
   'mode.daily': ['今日の配り', "Today's Deal"],
   'mode.free': ['ふだん', 'Free Play'],
