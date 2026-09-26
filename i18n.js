@@ -59,6 +59,7 @@ export const STRINGS = {
   'share.free': ['LONE DECK #{n} を {moves} 手・{time}でクリア（{streak} 連勝）', 'LONE DECK #{n} cleared in {moves} moves, {time} ({streak} wins in a row)'],
   'share.app': ['必ず解けるひとりトランプ LONE DECK', 'LONE DECK — solitaire you can always win'],
   credit: ['T.OF... のアプリ', 'An app by T.OF...'],
+  contact: ['問い合わせ', 'Contact'],
   'game.klondike': ['クロンダイク（1 枚めくり）', 'Klondike (draw 1)'],
   'a11y.stock': ['山札', 'Stock'],
   'a11y.waste': ['めくった札', 'Waste'],
