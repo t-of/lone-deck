@@ -3,8 +3,8 @@ import * as L from './logic.js';
 import { DEALS } from './deals.js';
 import { t as tr, pickLang, fmtTime } from './i18n.js';
 
-// localStorage はほかのアプリと共有される（同じ t-of.github.io のため）。
-// キーは必ず 'lone-deck.' で始める。
+// 課金アプリなので別オリジン（lone-deck.t-of.workers.dev）に置く。localStorage は他アプリと共有しない。
+// キーは念のため 'lone-deck.' で始める。
 const STORE = 'lone-deck.';
 
 function load(key, fallback) {
@@ -17,7 +17,7 @@ function save(key, value) {
   try { localStorage.setItem(STORE + key, JSON.stringify(value)); } catch { /* 保存できなくても遊べる */ }
 }
 
-const URL_APP = 'https://t-of.github.io/lone-deck/';
+const URL_APP = 'https://lone-deck.t-of.workers.dev/';
 const settings = L.normalize(load('settings'), { v: 1, sound: true, lang: null, coached: false });
 const stats = L.normalize(load('stats'), { v: 1, played: 0, won: 0, streak: 0, bestStreak: 0, bestMoves: null, bestTime: null, seen: [] });
 const daily = L.normalize(load('daily'), { v: 1, days: {} });

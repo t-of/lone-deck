@@ -3,12 +3,11 @@
 // 自分のファイルは network-first（つながっていれば常に最新、圏外なら保存しておいた版）。
 // Google Fonts は変わらないので cache-first。
 //
-// 注意: キャッシュ（CacheStorage）は t-of.github.io のすべてのアプリで共有されている。
-// 古いキャッシュを消すときは、必ず自分の PREFIX で始まるものだけを消す。
-// keys.filter(k => k !== CACHE) のように書くと、ほかのアプリのキャッシュまで消してしまう。
+// 課金アプリなので別オリジン（lone-deck.t-of.workers.dev）に置き、キャッシュも他アプリと共有しない。
+// PREFIX は念のため残す。古いキャッシュを消すときは、必ず自分の PREFIX で始まるものだけを消す。
 
 const PREFIX = 'lone-deck-';
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = `${PREFIX}${VERSION}`;
 const FONT_CACHE = `${PREFIX}fonts`;
 
