@@ -46,6 +46,41 @@ button { font: inherit; color: inherit; cursor: pointer; }
     max(10px, env(safe-area-inset-left));
 }
 
+/* ---- ホーム ---- */
+.home {
+  min-height: 100dvh;
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding:
+    max(20px, env(safe-area-inset-top))
+    max(16px, env(safe-area-inset-right))
+    max(14px, env(safe-area-inset-bottom))
+    max(16px, env(safe-area-inset-left));
+}
+.home__head { text-align: center; padding-top: 8px; }
+.home__name { margin: 0 0 4px; font-size: 32px; letter-spacing: 0.06em; color: var(--gold); }
+.home__catch { margin: 0; color: var(--muted); font-size: 14px; }
+.home__modes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.home__card {
+  min-height: 72px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+}
+.home__card-name { font-size: 16px; font-weight: 700; }
+.home__card-sub { font-size: 12px; color: var(--muted); }
+.home .howto { font-size: 14px; }
+.home .credit { margin-top: auto; flex-wrap: wrap; padding-top: 8px; }
+
 /* ---- 上の帯 ---- */
 .bar { display: flex; align-items: center; gap: 8px; min-height: 48px; }
 .modes { display: flex; background: rgba(0, 0, 0, 0.22); border: 1px solid var(--line); border-radius: 14px; padding: 3px; }

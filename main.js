@@ -518,12 +518,43 @@ $('undoBtn').addEventListener('click', (e) => { if (e.detail === 0) undo(); }); 
 $('hintBtn').addEventListener('click', showHint);
 $('finishBtn').addEventListener('click', autoFinish);
 $('newBtn').addEventListener('click', () => requestNew('free'));
-$('modeDaily').addEventListener('click', () => {
+function selectDaily() {
   if (game.mode === 'daily' && game.date === today() && !game.won) return;
   requestNew('daily');
-});
-$('modeFree').addEventListener('click', () => { if (game.mode !== 'free') requestNew('free'); });
+}
+function selectFree() { if (game.mode !== 'free') requestNew('free'); }
+$('modeDaily').addEventListener('click', selectDaily);
+$('modeFree').addEventListener('click', selectFree);
 $('menuBtn').addEventListener('click', () => { sfx.click(); showMenu(); });
+
+// ---- ホーム ----
+
+function renderHome() {
+  $('continueBtn').hidden = !(game && game.counted && !game.won);
+  const d = daily.days[today()];
+  $('homeDailySub').textContent = d?.won ? `${t('hud.moves', { n: d.moves })} · ${fmtTime(lang, d.time)}` : t('home.notYet');
+  $('homeFreeSub').textContent = `${t('stats.streak')} ${stats.streak}`;
+}
+
+function enterGame() {
+  $('home').hidden = true;
+  $('app').hidden = false;
+  layout();
+  render();
+  updateHud();
+  requestAnimationFrame(() => board.classList.add('ready'));
+  $('finishBtn').hidden = !L.canAutoFinish(state);
+}
+
+function goHome() {
+  $('app').hidden = true;
+  $('home').hidden = false;
+  renderHome();
+}
+
+$('continueBtn').addEventListener('click', () => { sfx.click(); enterGame(); if (L.isStuck(state)) showStuck(); });
+$('homeDaily').addEventListener('click', () => { sfx.click(); enterGame(); selectDaily(); if (L.isStuck(state)) showStuck(); });
+$('homeFree').addEventListener('click', () => { sfx.click(); enterGame(); selectFree(); if (L.isStuck(state)) showStuck(); });
 
 addEventListener('keydown', (e) => {
   if (sheet.open) return;
@@ -556,6 +587,7 @@ sheet.addEventListener('click', (e) => {
   else if (act === 'next') { closeSheet(); (game.mode === 'free' ? showBreak() : Promise.resolve()).then(() => startGame('free')); }   // 今日の配りのあとは区切りを入れない
   else if (act === 'daily') startGame('daily');
   else if (act === 'shareResult') shareResult();
+  else if (act === 'home') { closeSheet(); goHome(); }
   else if (act === 'stats') showStats();
   else if (act === 'howto') showHowto();
   else if (act === 'sound') { settings.sound = b.dataset.v === 'on'; save('settings', settings); setAudioSession(settings.sound); showMenu(); }
@@ -571,6 +603,7 @@ function showMenu() {
   openSheet(`
     <h2 class="sheet__title">LONE DECK</h2>
     <p class="sheet__sub">${t('tagline')} · ${t('game.klondike')}</p>
+    <button class="rowbtn" data-act="home">${t('menu.home')}<span>›</span></button>
     <button class="rowbtn" data-act="stats">${t('menu.stats')}<span>›</span></button>
     <button class="rowbtn" data-act="howto">${t('menu.howto')}<span>›</span></button>
     <div class="rowset"><span>${t('menu.sound')}</span>${seg('sound', settings.sound ? 'on' : 'off', [['on', t('on')], ['off', t('off')]])}</div>
@@ -619,18 +652,15 @@ function applyLang() {
   slotEls.s?.setAttribute('aria-label', t('a11y.stock'));
   slotEls.w?.setAttribute('aria-label', t('a11y.waste'));
   if (game) updateHud();
+  if ($('home').hidden === false) renderHome();
 }
 
 // ---- はじめる ----
+// まずホームを出す。今日の配り／ふだんを選ぶか「つづきから」で局へ入る（RULES.md §5）。
 
 buildBoard();
-layout();
+layout();   // resume() が render() するので、盤がまだ隠れていても先に大きさを決めておく
+resume();   // 保存があれば読み、なければ今日の配り・ふだんのどちらかで新しく始める
 applyLang();
-resume();
-render();
-updateHud();
-requestAnimationFrame(() => board.classList.add('ready'));   // 最初の配りは動かさずに出す
-new ResizeObserver(() => { layout(); render(); }).observe(board);
-$('finishBtn').hidden = !L.canAutoFinish(state);
-if (!settings.coached) showHowto();
-else if (L.isStuck(state)) showStuck();
+renderHome();
+new ResizeObserver(() => { if (!$('app').hidden) { layout(); render(); } }).observe(board);

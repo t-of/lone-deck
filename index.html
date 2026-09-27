@@ -39,7 +39,40 @@
     <symbol id="s3" viewBox="0 0 100 100"><path d="M50 3 L 88 50 L 50 97 L 12 50 Z"/></symbol>
   </svg>
 
-  <main class="app">
+  <!-- ホーム -->
+  <main class="home" id="home">
+    <header class="home__head">
+      <h1 class="home__name">LONE DECK</h1>
+      <p class="home__catch" data-t="tagline"></p>
+    </header>
+
+    <button class="btn btn--main btn--wide" id="continueBtn" data-t="btn.continue" hidden></button>
+
+    <div class="home__modes">
+      <button class="home__card" id="homeDaily" type="button">
+        <span class="home__card-name" data-t="mode.daily"></span>
+        <span class="home__card-sub" id="homeDailySub"></span>
+      </button>
+      <button class="home__card" id="homeFree" type="button">
+        <span class="home__card-name" data-t="mode.free"></span>
+        <span class="home__card-sub" id="homeFreeSub"></span>
+      </button>
+    </div>
+
+    <ol class="howto">
+      <li data-t="howto.1"></li>
+      <li data-t="howto.2"></li>
+      <li data-t="howto.3"></li>
+    </ol>
+
+    <footer class="credit">
+      <a href="https://t-of.github.io/" data-t="credit">T.OF... のアプリ</a>・<a href="https://t-of.github.io/contact/" data-t="contact" target="_blank" rel="noopener">問い合わせ</a>
+      <button class="pill" data-wak="install" data-t="btn.install" hidden>アプリにする</button>
+      <button class="pill" data-wak="share" data-t="btn.share">共有</button>
+    </footer>
+  </main>
+
+  <main class="app" id="app" hidden>
     <header class="bar">
       <div class="modes">
         <button class="mode" id="modeDaily" type="button"><span data-t="mode.daily"></span><b id="dailyNo"></b></button>
